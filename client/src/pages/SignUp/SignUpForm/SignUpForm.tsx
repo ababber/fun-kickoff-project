@@ -74,6 +74,7 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
             }}
             name="email"
             autoComplete="email"
+            autoFocus
             helperText={touched.email ? errors.email : ''}
             error={touched.email && Boolean(errors.email)}
             value={values.email}
@@ -95,7 +96,6 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
             }}
             name="username"
             autoComplete="username"
-            autoFocus
             helperText={touched.username ? errors.username : ''}
             error={touched.username && Boolean(errors.username)}
             value={values.username}

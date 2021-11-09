@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 950,
   },
   link: {
-    color: '#F04040',
+    color: '#F14140',
     fontWeight: 950,
   },
   linkPretext: {
@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 25,
     marginBottom: 30,
     fontSize: 16,
-    backgroundColor: '#F04040',
+    backgroundColor: '#F14140',
     fontWeight: 'bold',
   },
 }));
