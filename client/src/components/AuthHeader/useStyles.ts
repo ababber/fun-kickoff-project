@@ -1,7 +1,18 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-  authHeader: {
+  sitterLink: {
+    color: '#000000',
+    fontWeight: 950,
+    marginRight: 35,
+  },
+  headerWrapper: {
+    margin: '15px',
+  },
+  logo: {
+    maxWidth: 150,
+  },
+  authWrapper: {
     alignSelf: 'flex-end',
     justifyContent: 'flex-end',
     alignItems: 'center',
@@ -20,15 +31,27 @@ const useStyles = makeStyles((theme) => ({
     padding: '1rem 0',
   },
   link: { textDecoration: 'none' },
-  accBtn: {
-    width: 170,
-    height: 54,
+  loginBtn: {
+    width: 160,
+    height: 50,
     borderRadius: theme.shape.borderRadius,
-    filter: 'drop-shadow(0px 2px 6px rgba(74,106,149,0.2))',
-    backgroundColor: '#ffffff',
-    color: '#3a8dff',
+    backgroundColor: '#FFFFFF',
+    color: '#F04040',
     boxShadow: 'none',
-    marginRight: 35,
+    marginRight: 10,
+    display: 'flex',
+    alignItems: 'center',
+  },
+  signupBtn: {
+    width: 160,
+    height: 50,
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: '#F04040',
+    color: '#FFFFFF',
+    boxShadow: 'none',
+    marginRight: 10,
+    display: 'flex',
+    alignItems: 'center',
   },
 }));
 

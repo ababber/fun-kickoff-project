@@ -3,15 +3,30 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   form: {
     width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
+    margin: theme.spacing(1),
+  },
+  textField: {
+    margin: '0 0 20px 0',
   },
   label: {
-    fontSize: 19,
-    color: 'rgb(0,0,0,0.4)',
-    paddingLeft: '5px',
+    fontSize: 10,
+    color: '#000000',
+  },
+  formLabel: {
+    color: '#000000',
+    fontSize: 12,
+    fontWeight: 950,
+  },
+  link: {
+    color: '#F04040',
+    fontWeight: 950,
+  },
+  linkPretext: {
+    color: '#000000',
+    fontWeight: 950,
   },
   inputs: {
-    marginTop: '.8rem',
+    margin: '.5rem',
     height: '2rem',
     padding: '5px',
   },
@@ -25,9 +40,10 @@ const useStyles = makeStyles((theme) => ({
     width: 160,
     height: 56,
     borderRadius: theme.shape.borderRadius,
-    marginTop: 49,
+    marginTop: 25,
+    marginBottom: 30,
     fontSize: 16,
-    backgroundColor: '#3a8dff',
+    backgroundColor: '#F04040',
     fontWeight: 'bold',
   },
 }));
