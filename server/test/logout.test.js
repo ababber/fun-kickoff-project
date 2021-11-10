@@ -7,6 +7,11 @@ chai.should();
 chai.use(chaiHttp);
 
 describe("/logout ping", () => {
+
+  after(() => {
+    mongoose.disconnect();
+  });
+
   it("it should return 200 and a message", (done) => {
     chai.request(app)
     .get(`/auth/logout`)
@@ -18,5 +23,3 @@ describe("/logout ping", () => {
     done();
   });
 });
-
-mongoose.disconnect();
