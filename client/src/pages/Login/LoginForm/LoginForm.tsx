@@ -56,7 +56,7 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
     >
       {({ handleSubmit, handleChange, values, touched, errors, isSubmitting }) => (
         <form onSubmit={handleSubmit} className={classes.form} noValidate>
-          <FormLabel className={classes.formLabel}>EMAIL ADDRESS</FormLabel>
+          <FormLabel className={classes.formLabel}>email address</FormLabel>
           <TextField
             id="email"
             fullWidth
@@ -77,7 +77,7 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
             variant="outlined"
             className={classes.textField}
           />
-          <FormLabel className={classes.formLabel}>PASSWORD</FormLabel>
+          <FormLabel className={classes.formLabel}>password</FormLabel>
           <TextField
             id="password"
             fullWidth
@@ -100,7 +100,11 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
           />
           <Box textAlign="center">
             <Button type="submit" size="large" variant="contained" color="primary" className={classes.submit}>
-              {isSubmitting ? <CircularProgress style={{ color: 'white' }} /> : 'Login'}
+              {isSubmitting ? (
+                <CircularProgress style={{ color: 'white' }} />
+              ) : (
+                <Typography className={classes.submitText}>login</Typography>
+              )}
             </Button>
             <Typography className={classes.linkPretext}>Don&#39;t have an account? {CreateAccountLink()}</Typography>
           </Box>

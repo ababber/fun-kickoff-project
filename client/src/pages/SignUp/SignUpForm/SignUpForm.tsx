@@ -50,7 +50,7 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
         username: '',
       }}
       validationSchema={Yup.object().shape({
-        username: Yup.string().required('Username is required').max(40, 'Username is too long'),
+        username: Yup.string().required('Name is required').max(40, 'Name is too long'),
         email: Yup.string().required('Email is required').email('Email is not valid'),
         password: Yup.string()
           .required('Password is required')
@@ -61,7 +61,7 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
     >
       {({ handleSubmit, handleChange, values, touched, errors, isSubmitting }) => (
         <form onSubmit={handleSubmit} className={classes.form} noValidate>
-          <FormLabel className={classes.formLabel}>EMAIL ADDRESS</FormLabel>
+          <FormLabel className={classes.formLabel}>email address</FormLabel>
           <TextField
             id="email"
             fullWidth
@@ -83,7 +83,7 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
             placeholder="Your email"
             className={classes.textField}
           />
-          <FormLabel className={classes.formLabel}>NAME</FormLabel>
+          <FormLabel className={classes.formLabel}>name</FormLabel>
           <TextField
             id="username"
             fullWidth
@@ -105,7 +105,7 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
             className={classes.textField}
           />
 
-          <FormLabel className={classes.formLabel}>PASSWORD</FormLabel>
+          <FormLabel className={classes.formLabel}>password</FormLabel>
           <TextField
             id="password"
             fullWidth
@@ -129,7 +129,11 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
 
           <Box textAlign="center">
             <Button type="submit" size="large" variant="contained" color="primary" className={classes.submit}>
-              {isSubmitting ? <CircularProgress style={{ color: 'white' }} /> : 'SIGN UP'}
+              {isSubmitting ? (
+                <CircularProgress style={{ color: 'white' }} />
+              ) : (
+                <Typography className={classes.submitText}>sign up</Typography>
+              )}
             </Button>
             <Typography className={classes.linkPretext}>Already a member? {LoginLink()}</Typography>
           </Box>

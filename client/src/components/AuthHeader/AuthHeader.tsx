@@ -26,12 +26,12 @@ const AuthHeader = (): JSX.Element => {
                 </Link>
                 <Link to="/login" className={classes.link}>
                   <Button color="primary" className={classes.loginBtn} variant="outlined">
-                    Login
+                    login
                   </Button>
                 </Link>
                 <Link to="/signup" className={classes.link}>
                   <Button color="primary" className={classes.signupBtn} variant="contained">
-                    Sign Up
+                    sign Up
                   </Button>
                 </Link>
               </Box>

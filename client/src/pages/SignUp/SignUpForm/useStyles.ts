@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     color: '#000000',
   },
   formLabel: {
+    textTransform: 'uppercase',
     color: '#000000',
     fontSize: 12,
     fontWeight: 950,
@@ -45,6 +46,12 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 16,
     backgroundColor: '#F14140',
     fontWeight: 'bold',
+  },
+  submitText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
   },
 }));
 
