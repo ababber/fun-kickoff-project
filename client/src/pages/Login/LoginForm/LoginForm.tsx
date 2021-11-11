@@ -1,11 +1,13 @@
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Box from '@material-ui/core/Box';
+import FormLabel from '@material-ui/core/FormLabel';
+import { CircularProgress } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom';
 import { Formik, FormikHelpers } from 'formik';
 import * as Yup from 'yup';
-import Typography from '@material-ui/core/Typography';
 import useStyles from './useStyles';
-import { CircularProgress } from '@material-ui/core';
 
 interface Props {
   handleSubmit: (
@@ -29,6 +31,14 @@ interface Props {
 export default function Login({ handleSubmit }: Props): JSX.Element {
   const classes = useStyles();
 
+  const CreateAccountLink = (): JSX.Element => {
+    return (
+      <Link to="/signup" className={classes.link}>
+        Create an account
+      </Link>
+    );
+  };
+
   return (
     <Formik
       initialValues={{
@@ -46,9 +56,9 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
     >
       {({ handleSubmit, handleChange, values, touched, errors, isSubmitting }) => (
         <form onSubmit={handleSubmit} className={classes.form} noValidate>
+          <FormLabel className={classes.formLabel}>email address</FormLabel>
           <TextField
             id="email"
-            label={<Typography className={classes.label}>E-mail address</Typography>}
             fullWidth
             margin="normal"
             InputLabelProps={{
@@ -64,10 +74,12 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
             error={touched.email && Boolean(errors.email)}
             value={values.email}
             onChange={handleChange}
+            variant="outlined"
+            className={classes.textField}
           />
+          <FormLabel className={classes.formLabel}>password</FormLabel>
           <TextField
             id="password"
-            label={<Typography className={classes.label}>Password</Typography>}
             fullWidth
             margin="normal"
             InputLabelProps={{
@@ -83,11 +95,22 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
             error={touched.password && Boolean(errors.password)}
             value={values.password}
             onChange={handleChange}
+            variant="outlined"
+            className={classes.textField}
           />
           <Box textAlign="center">
             <Button type="submit" size="large" variant="contained" color="primary" className={classes.submit}>
-              {isSubmitting ? <CircularProgress style={{ color: 'white' }} /> : 'Login'}
+              {isSubmitting ? (
+                <CircularProgress style={{ color: 'white' }} />
+              ) : (
+                <Typography color="secondary" className={classes.submitText}>
+                  login
+                </Typography>
+              )}
             </Button>
+            <Typography color="textPrimary" className={classes.linkPretext}>
+              Don&#39;t have an account? {CreateAccountLink()}
+            </Typography>
           </Box>
           <div style={{ height: 95 }} />
         </form>
