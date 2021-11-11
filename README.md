@@ -1,10 +1,10 @@
-## Project Name
+## Loving Sitter
 
-This is a little description about your project.
+A website that helps dog owners find a dog sitter in real time.
 
 **Tech Stack:** MongoDB, Express.js, React.js, Node.js, Typescript
 
-**Contributors**: [Hatchways](https://github.com/hatchways) (replace)
+**Contributors**: Ankit Babber
 
 ---
 
@@ -40,3 +40,15 @@ This is a little description about your project.
 2. Dashboard. Here is a description about what a user can expect to see
 
 ![Dashboard](demo/images/dashboard.png)
+
+---
+
+### How To Run Back-end Tests 
+
+1. Go into the server directory `cd server`
+2. Ensure your local .env file is setup correctly
+3. Open the package.json file in the server directory
+4. In the package.json file, add your local .env file to the test script: "DOTENV_CONFIG_PATH=`your_local.env` mocha -r dotenv/config ./test/*.test.js"
+5. Run `npm run test` to start the tests while in the server directory
+
+---
