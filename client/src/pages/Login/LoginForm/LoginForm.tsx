@@ -103,10 +103,14 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
               {isSubmitting ? (
                 <CircularProgress style={{ color: 'white' }} />
               ) : (
-                <Typography className={classes.submitText}>login</Typography>
+                <Typography color="secondary" className={classes.submitText}>
+                  login
+                </Typography>
               )}
             </Button>
-            <Typography className={classes.linkPretext}>Don&#39;t have an account? {CreateAccountLink()}</Typography>
+            <Typography color="textPrimary" className={classes.linkPretext}>
+              Don&#39;t have an account? {CreateAccountLink()}
+            </Typography>
           </Box>
           <div style={{ height: 95 }} />
         </form>

@@ -23,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 950,
   },
   linkPretext: {
-    color: '#000000',
     fontWeight: 950,
   },
   inputs: {
@@ -48,7 +47,6 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 'bold',
   },
   submitText: {
-    color: '#FFFFFF',
     fontSize: 16,
     fontWeight: 'bold',
     textTransform: 'uppercase',

@@ -132,10 +132,14 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
               {isSubmitting ? (
                 <CircularProgress style={{ color: 'white' }} />
               ) : (
-                <Typography className={classes.submitText}>sign up</Typography>
+                <Typography color="secondary" className={classes.submitText}>
+                  sign up
+                </Typography>
               )}
             </Button>
-            <Typography className={classes.linkPretext}>Already a member? {LoginLink()}</Typography>
+            <Typography color="textPrimary" className={classes.linkPretext}>
+              Already a member? {LoginLink()}
+            </Typography>
           </Box>
         </form>
       )}

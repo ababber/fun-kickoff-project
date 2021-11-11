@@ -6,18 +6,8 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 950,
     marginRight: 35,
   },
-  headerWrapper: {
-    margin: '15px',
-  },
   logo: {
     maxWidth: 150,
-  },
-  authWrapper: {
-    alignSelf: 'flex-end',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    display: 'flex',
-    flexWrap: 'wrap',
   },
   accAside: {
     fontSize: 14,
@@ -35,8 +25,6 @@ const useStyles = makeStyles((theme) => ({
     width: 160,
     height: 50,
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: '#FFFFFF',
-    color: '#F14140',
     textTransform: 'uppercase',
     boxShadow: 'none',
     marginRight: 10,
@@ -47,8 +35,6 @@ const useStyles = makeStyles((theme) => ({
     width: 160,
     height: 50,
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: '#F14140',
-    color: '#FFFFFF',
     textTransform: 'uppercase',
     boxShadow: 'none',
     marginRight: 10,

@@ -14,26 +14,22 @@ const AuthHeader = (): JSX.Element => {
   return (
     <React.Fragment>
       <AppBar color="secondary">
-        <Box className={classes.headerWrapper}>
+        <Box margin="15px">
           <Grid container justify="space-between">
             <Grid item>
               <img src={logo} alt="logo" className={logo} />
             </Grid>
             <Grid item>
-              <Box className={classes.authWrapper}>
+              <Box display="flex" flexWrap="wrap" alignItems="center" justifyContent="flex-end" alignSelf="flex-end">
                 <Link to="" className={classes.sitterLink}>
                   Become A Sitter
                 </Link>
-                <Link to="/login" className={classes.link}>
-                  <Button color="primary" className={classes.loginBtn} variant="outlined">
-                    login
-                  </Button>
-                </Link>
-                <Link to="/signup" className={classes.link}>
-                  <Button color="primary" className={classes.signupBtn} variant="contained">
-                    sign Up
-                  </Button>
-                </Link>
+                <Button component={Link} to="/login" color="primary" variant="outlined" className={classes.loginBtn}>
+                  login
+                </Button>
+                <Button component={Link} to="/signup" color="primary" variant="contained" className={classes.signupBtn}>
+                  sign Up
+                </Button>
               </Box>
             </Grid>
           </Grid>
