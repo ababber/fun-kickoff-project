@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const { Schema } = mongoose;
+const Availability = require('./Availability')
 
 const profileSchema = new mongoose.Schema({
-  profile_id: mongoose.ObjectId,
+  _profile_id: mongoose.ObjectId,
   first_name: String,
   last_name: String,
   pronouns: String,
@@ -18,16 +18,34 @@ const profileSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
-    secondary_address: String,
-    tertiary_address: String,
+    secondary_address: {
+      type: String,
+      required: false,
+    },
+    tertiary_address: {
+      type: String,
+      required: false,
+    },
     city: {
       type: String,
-      required: true,
+      required: false,
     },
-    county: String,
-    province: String,
-    state: String,
-    region: String,
+    county: {
+      type: String,
+      required: false,
+    },
+    province: {
+      type: String,
+      required: false,
+    },
+    state: {
+      type: String,
+      required: false,
+    },
+    region: {
+      type: String,
+      required: false,
+    },
     postal_code: {
       type: String,
       required: true,
@@ -42,7 +60,8 @@ const profileSchema = new mongoose.Schema({
     validate: [descriptionArrayBound, 'description exceeds 500 words']
   },
   availability: {
-    type: [{type: Schema.Types.ObjectId}],
+    type: Availability,
+    days: [mongoose.Types.ObjectId],
     validate: [availabilityArrayBound, 'availability exceeds 365 days']
   }
 });

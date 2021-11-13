@@ -1,17 +1,17 @@
 const mongoose = require('mongoose');
-const { Schema } = mongoose;
 
 const availabilitySchema = new mongoose.Schema({
-  id: mongoose.ObjectId,
+  _id: mongoose.ObjectId,
   isRecurring: Boolean,
   from: Number,
   to: Number,
   date: {
     type: Date, 
-    validate: [cleanupAvailability, "date has passed"]
+    validate: [cleanupAvailability, 'date has expired']
   },
+  sitter: mongoose.Types.ObjectId,
   patrons: {
-    profile_id: [{type: Schema.Types.ObjectId}],
+    profile_id: [mongoose.Types.ObjectId],
     validate: [arrayBound, 'patrons exceed the number of hours in a day']
   }
 });
