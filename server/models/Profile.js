@@ -2,27 +2,26 @@ const mongoose = require('mongoose');
 const Availability = require('./Availability')
 
 const profileSchema = new mongoose.Schema({
-  _profile_id: mongoose.ObjectId,
-  first_name: String,
-  last_name: String,
+  firstName: String,
+  lastName: String,
   pronouns: String,
   birthday: Date,
   email: String,
-  phone_number: Number,
+  phoneNumber: Number,
   address: {
-    street_number: {
+    streetNumber: {
       type: Number,
       required: true,
     },
-    street_name: {
+    streetName: {
       type: String,
       required: true,
     },
-    secondary_address: {
+    secondaryAddress: {
       type: String,
       required: false,
     },
-    tertiary_address: {
+    tertiaryAddress: {
       type: String,
       required: false,
     },
@@ -46,7 +45,7 @@ const profileSchema = new mongoose.Schema({
       type: String,
       required: false,
     },
-    postal_code: {
+    postalCode: {
       type: String,
       required: true,
     },
