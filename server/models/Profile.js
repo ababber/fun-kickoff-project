@@ -1,12 +1,11 @@
 const mongoose = require('mongoose');
-const Availability = require('./Availability')
+const Schema = mongoose.Schema;
 
 const profileSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
   pronouns: String,
   birthday: Date,
-  email: String,
   phoneNumber: Number,
   address: {
     streetNumber: {
@@ -59,8 +58,10 @@ const profileSchema = new mongoose.Schema({
     validate: [descriptionArrayBound, 'description exceeds 500 words']
   },
   availability: {
-    type: Availability,
-    days: [mongoose.Types.ObjectId],
+    days: [{ 
+      type: Schema.Types.ObjectId, 
+      ref: 'Availability' 
+    }],
     validate: [availabilityArrayBound, 'availability exceeds 365 days']
   }
 });
@@ -73,4 +74,4 @@ const availabilityArrayBound = (val) => {
   return val.length <= 365;
 };
 
-module.exports = Profile = mongoose.model("profile", profileSchema);
+module.exports = Profile = mongoose.model('Profile', profileSchema);

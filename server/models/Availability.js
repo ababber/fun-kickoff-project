@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const availabilitySchema = new mongoose.Schema({
   isRecurring: Boolean,
@@ -8,9 +9,15 @@ const availabilitySchema = new mongoose.Schema({
     type: Date, 
     validate: [cleanupAvailability, 'date has expired']
   },
-  sitterId: mongoose.Types.ObjectId,
+  sitterId: { 
+    type: Schema.Types.ObjectId, 
+    ref: 'Profile',
+  },
   patrons: {
-    profileId: [mongoose.Types.ObjectId],
+    profileIds: [{ 
+      type: Schema.Types.ObjectId, 
+      ref: 'Profile' 
+    }],
     validate: [arrayBound, 'patrons exceed the number of hours in a day']
   }
 });
@@ -23,4 +30,4 @@ const cleanupAvailability = (val) => {
   return Date.now <= val;
 };
 
-module.exports = Availability = mongoose.model("availability", availabilitySchema);
+module.exports = Availability = mongoose.model('Availability', availabilitySchema);
